@@ -1,0 +1,10 @@
+#eff that camera problem
+alias fixcamera='sudo killall VDCAssistant'
+
+#for the forgetful....
+alias ipconfig=ifconfig
+
+#ionic
+alias debug_ios='ionic run ios -c -s -l'
+alias debug_android='ionic run android -c -s -l'
+

@@ -1,0 +1,5 @@
+[user]
+	name = Rick Yoesting
+	email = rick.yoesting@gmail.com
+[credential]
+	helper = osxkeychain
