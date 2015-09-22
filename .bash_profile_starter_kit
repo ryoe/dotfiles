@@ -1,3 +1,5 @@
+
+
 #eff that camera problem
 alias fixcamera='sudo killall VDCAssistant'
 
