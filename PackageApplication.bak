@@ -147,6 +147,7 @@ if ( defined $opt{sign} ) {
 
             runCmd('/usr/libexec/PlistBuddy', '-c', 'Set :get-task-allow NO', $entitlements_plist);
             # fix dread beta entitlements issue: Add the effin' beta-reports-active
+            # source: http://cutting.io/posts/packaging-ios-apps-from-the-command-line/
             runCmd('/usr/libexec/PlistBuddy', '-c', 'Add :beta-reports-active bool', $entitlements_plist);
             runCmd('/usr/libexec/PlistBuddy', '-c', 'Set :beta-reports-active YES', $entitlements_plist);
 
