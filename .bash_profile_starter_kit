@@ -6,7 +6,18 @@ alias fixcamera='sudo killall VDCAssistant'
 #for the forgetful....
 alias ipconfig=ifconfig
 
+export NODE_ENV=development
+
+#raisemore things
+export JAVA_HOME=$(/usr/libexec/java_home)
+export ANDROID_HOME=/Users/ryoe/Library/Android/sdk
+
+PATH=$PATH:$ANDROID_HOME
+
+alias taildev='heroku logs -t -a raisemore-dev-api'
+alias tailstage='heroku logs -t -a raisemore-stage-api'
+alias tailprod='heroku logs -t -a raisemore-prod-api'
+
 #ionic
 alias debug_ios='ionic run ios -c -s -l'
 alias debug_android='ionic run android -c -s -l'
-
