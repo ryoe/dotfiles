@@ -27,6 +27,7 @@ GetOptions ( \%opt,
              "verbose|v!",
              "help|h|?",
              "man",
+             "adhoc",
              "plugin=s@" => \@plugins,
              ) or pod2usage(2);
 
@@ -146,10 +147,17 @@ if ( defined $opt{sign} ) {
             close($ofh) or fatal("Cannot close file handle for '$entitlements_plist': $!");
 
             runCmd('/usr/libexec/PlistBuddy', '-c', 'Set :get-task-allow NO', $entitlements_plist);
-            # fix dread beta entitlements issue: Add the effin' beta-reports-active
-            # source: http://cutting.io/posts/packaging-ios-apps-from-the-command-line/
-            runCmd('/usr/libexec/PlistBuddy', '-c', 'Add :beta-reports-active bool', $entitlements_plist);
-            runCmd('/usr/libexec/PlistBuddy', '-c', 'Set :beta-reports-active YES', $entitlements_plist);
+
+            # only add beta entitlements for app store builds
+            if ( !defined($opt{adhoc}) ) {
+                print "adhoc IS NOT DEFINED, so add beta entitlements!\n";
+                # fix dread beta entitlements issue: Add the effin' beta-reports-active
+                # source: http://cutting.io/posts/packaging-ios-apps-from-the-command-line/
+                runCmd('/usr/libexec/PlistBuddy', '-c', 'Add :beta-reports-active bool', $entitlements_plist);
+                runCmd('/usr/libexec/PlistBuddy', '-c', 'Set :beta-reports-active YES', $entitlements_plist);
+            } else {
+                print "adhoc IS DEFINED, so do not add beta entitlements!\n";                
+            }
 
             # PlistBuddy will fail if get-task-allow doesn't exist. That's okay.
             runCmd('/usr/bin/plutil', '-lint', $entitlements_plist);
