@@ -15,6 +15,7 @@ brew install coreutils findutils
 brew install bash git
 
 # Install proggy langs
+#brew install ruby
 #brew install go elixir 
 
 # Install data stuff
