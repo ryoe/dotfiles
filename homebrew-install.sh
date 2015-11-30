@@ -14,8 +14,13 @@ brew install coreutils findutils
 # Install Bash 4 and git
 brew install bash git
 
-# Install proggy langs
-#brew install ruby
+# Install langs and lang support
+# ruby
+brew install ruby
+#rvm 
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable
+
 #brew install go elixir 
 
 # Install data stuff
