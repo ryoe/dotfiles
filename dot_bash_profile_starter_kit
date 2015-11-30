@@ -21,3 +21,8 @@ alias tailprod='heroku logs -t -a raisemore-prod-api'
 #ionic
 alias debug_ios='ionic run ios -c -s -l'
 alias debug_android='ionic run android -c -s -l'
+
+# rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
