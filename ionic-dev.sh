@@ -19,6 +19,6 @@ if test $(which node); then
   # n - for managing node versions
   sudo npm install -g n
 
-  # install node v0.12.7
-  n 0.12.7
+  # install node v0.12.8
+  n 0.12.8
 fi
