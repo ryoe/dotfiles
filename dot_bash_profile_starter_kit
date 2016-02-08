@@ -1,4 +1,5 @@
-
+#eff everything! via https://twitter.com/rwjblue/status/536637409547808768
+alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 
 #eff that camera problem
 alias fixcamera='sudo killall VDCAssistant'
