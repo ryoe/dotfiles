@@ -156,7 +156,9 @@ if ( defined $opt{sign} ) {
                 runCmd('/usr/libexec/PlistBuddy', '-c', 'Add :beta-reports-active bool', $entitlements_plist);
                 runCmd('/usr/libexec/PlistBuddy', '-c', 'Set :beta-reports-active YES', $entitlements_plist);
             } else {
-                print "adhoc IS DEFINED, so do not add beta entitlements!\n";                
+                print "adhoc IS DEFINED, so do not add beta entitlements!\n";
+                print "adhoc IS DEFINED, so delete key 'beta-reports-active'\n";
+                runCmd('/usr/libexec/PlistBuddy', '-c', 'Delete :beta-reports-active', $entitlements_plist);
             }
 
             # PlistBuddy will fail if get-task-allow doesn't exist. That's okay.
