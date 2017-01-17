@@ -1,28 +1,33 @@
-#eff everything! via https://twitter.com/rwjblue/status/536637409547808768
+# eff everything! via https://twitter.com/rwjblue/status/536637409547808768
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 
-#eff that camera problem
+# eff that camera problem
 alias fixcamera='sudo killall VDCAssistant'
 
-#for the forgetful....
+# for the forgetful....
 alias ipconfig=ifconfig
 
 export NODE_ENV=development
 
-#raisemore things
+# Android dev things
 export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=/Users/ryoe/Library/Android/sdk
 
 PATH=$PATH:$ANDROID_HOME
 PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+# ionic
+alias debug_ios='ionic run ios -c -s -l'
+alias debug_android='ionic run android -c -s -l'
+
+# heroku aliases...
 alias taildev='heroku logs -t -a raisemore-dev-api'
 alias tailstage='heroku logs -t -a raisemore-stage-api'
 alias tailprod='heroku logs -t -a raisemore-prod-api'
 
-#ionic
-alias debug_ios='ionic run ios -c -s -l'
-alias debug_android='ionic run android -c -s -l'
+# git and ruby
+alias undo='git reset --soft HEAD~1'
+alias migrate_test='bundle exec rake db:migrate RAILS_ENV=test'
 
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
