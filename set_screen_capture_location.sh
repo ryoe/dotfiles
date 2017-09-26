@@ -1,5 +1,5 @@
-mkdir ~/Documents/_Screenshots
+mkdir ~/Desktop/Screenshots
 
-defaults write com.apple.screencapture location ~/Documents/_Screenshots
+defaults write com.apple.screencapture location ~/Desktop/Screenshots
 
 killall SystemUIServer
