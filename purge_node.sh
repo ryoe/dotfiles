@@ -1,5 +1,6 @@
-brew uninstall node
+brew uninstall yarn
 brew uninstall npm
+brew uninstall node
 
 if [ -f /usr/local/bin/n ]; then
   echo "PURGE IT! ==> /usr/local/bin/n"
@@ -65,3 +66,6 @@ if [ -d /opt/local/lib/node_modules ]; then
   echo "PURGE IT! ==> /opt/local/lib/node_modules"
   sudo rm -rf t/local/lib/node_modules
 fi
+
+
+echo "Now install nvm and begin again!"
